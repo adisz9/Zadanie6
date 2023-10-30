@@ -1,0 +1,48 @@
+--create database [PL68437_01];
+/*
+*/
+use [Pl68437_01]
+
+create table osoba (
+nazwisko varchar(40), 
+imie varchar(25),
+);
+
+insert into osoba (nazwisko, imie) values 
+('nazwisko1','imie1');
+
+insert into osoba (nazwisko, imie) values
+('nazwisko2', 'imie2'), ('nazwisko4', 'imie4')
+
+select * from osoba
+
+drop table osoba
+
+create table gender (id_gender int identity primary key, nazwa char(15));
+
+insert into gender values ('kobieta'),('mê¿czyzna');
+select * from gender
+
+alter table osoba
+add id_gender int identity, id_gender, int foreign key references gender (id_gender)
+constraint PK_id_osoba_osoba primary key (id_osoba);
+
+select * from osoba
+
+insert into osoba values ('kopernik','miko³aj',2);
+
+update osoba set id_gender=1 where id_osoba=1;
+
+select * from gender
+
+delete from osoba where id_osoba=2;
+
+select * from gender 
+
+alter table osoba 
+drop constraint FK_osoba_id_gender_pl68437_01
+
+alter table osoba add ulica varcher(50);
+
+alter table osoba 
+drop column ulica;
